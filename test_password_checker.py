@@ -27,3 +27,9 @@ def test_strong_password():
     assert is_password_strong("Pass1234") == True
     assert is_password_strong("StrongPass123") == True
     assert is_password_strong("MyP@ssw0rd") == True
+
+def test_broken():
+    """Намеренно сломанный тест для задания 5.4."""
+    # Пароль "12345" - короткий и без букв, должен быть СЛАБЫМ
+    # Но мы утверждаем обратное - это ОШИБКА!
+    assert is_password_strong("12345") == True
